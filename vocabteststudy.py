@@ -298,7 +298,7 @@ terms = [
     "confucianism",
     "constantinople",
     "crusades",
-    "daosim",
+    "daoism",
     "eastern orthodox christianity",
     "european renaissance",
     "foot binding",
@@ -345,7 +345,7 @@ terms = [
     "henry viii",
     "indulgences",
     "istanbul",
-    "janisaaries",
+    "janissaries",
     "jizya",
     "manchus",
     "martin luther",
@@ -1741,4 +1741,119 @@ while run:
                 result()
                 unit5_track()
                 clear_168 = True
-            elif generated_defintion ==
+            elif generated_defintion == 169 and clear_169 == False:
+                print(definitions[169])
+                correct_word = terms[169]
+                result()
+                unit5_track()
+                clear_169 = True
+            elif generated_defintion == 170 and clear_170 == False:
+                print(definitions[170])
+                correct_word = terms[170]
+                result()
+                unit5_track()
+                clear_170 = True
+            elif generated_defintion == 171 and clear_171 == False:
+                print(definitions[171])
+                correct_word = terms[171]
+                result()
+                unit5_track()
+                clear_171 = True
+            elif generated_defintion == 172 and clear_172 == False:
+                print(definitions[172])
+                correct_word = terms[172]
+                result()
+                unit5_track()
+                clear_172 = True
+            elif generated_defintion == 173 and clear_173 == False:
+                print(definitions[173])
+                correct_word = terms[173]
+                result()
+                unit5_track()
+                clear_173 = True
+            elif generated_defintion == 174 and clear_174 == False:
+                print(definitions[174])
+                correct_word = terms[174]
+                result()
+                unit5_track()
+                clear_174 = True
+            elif generated_defintion == 175 and clear_175 == False:
+                print(definitions[175])
+                correct_word = terms[175]
+                result()
+                unit5_track()
+                clear_175 = True
+            elif generated_defintion == 176 and clear_176 == False:
+                print(definitions[176])
+                correct_word = terms[176]
+                result()
+                unit5_track()
+                clear_176 = True
+            
+            if unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 40:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit5.lower() == "no" and total == 60:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower() == "no" and unit5.lower() == "no" and unit4.lower() == "no" and total == 25:
+                ending()
+            elif unit1.lower() == "no" and unit5.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 15:
+                ending()
+            elif unit5.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 36:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower == "no" and unit3.lower() == "no" and total == 100:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower == "no" and unit4.lower() == "no" and total == 65:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower == "no" and unit5.lower() == "no" and total == 85:
+                ending()
+            elif unit1.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no" and total == 55:
+                ending()
+            elif unit1.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no" and total == 75:
+                ending()
+            elif unit1.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 40:
+                ending()
+            elif unit2.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no" and total == 76:
+                ending()
+            elif unit2.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no" and total == 96:
+                ending()
+            elif unit2.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 61:
+                ending()
+            elif unit3.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 51:
+                ending()
+            elif unit1.lower() == "no" and unit2.lower() == "no" and total == 125:
+                ending()
+            elif unit1.lower() == "no" and unit3.lower() == "no" and total == 115:
+                ending()
+            elif unit1.lower() == "no" and unit4.lower() == "no" and total == 80:
+                ending()
+            elif unit1.lower() == "no" and unit5.lower() == "no" and total == 100:
+                ending()
+            elif unit2.lower() == "no" and unit3.lower() == "no" and total == 136:
+                ending()
+            elif unit2.lower() == "no" and unit4.lower() == "no" and total == 101:
+                ending()
+            elif unit2.lower() == "no" and unit5.lower() == "no" and total == 121:
+                ending()
+            elif unit3.lower() == "no" and unit4.lower() == "no" and total == 91:
+                ending()
+            elif unit3.lower() == "no" and unit5.lower() == "no" and total == 111:
+                ending()
+            elif unit4.lower() == "no" and unit5.lower() == "no" and total == 76:
+                ending()
+            elif unit1.lower() == "no" and total == 140:
+                ending()
+            elif unit2.lower() == "no" and total == 161:
+                ending()
+            elif unit3.lower() == "no" and total == 151:
+                ending()
+            elif unit4.lower() == "no" and total == 116:
+                ending()
+            elif unit5.lower() == "no" and total == 136:
+                ending()
+            elif total == 176:
+                ending()
+    elif study.lower() == "no":
+        print("I hope you already studied!")
+        run = False
+    else:
+        time.sleep(0.5)
