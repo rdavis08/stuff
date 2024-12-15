@@ -22,51 +22,6 @@ def result():
         incorrect()
     total += 1
     time.sleep(1)
-
-def ending():
-    global points_percent
-    global points
-    global total
-    global studying
-    global unit1
-    global unit1_points
-    global unit1_percent
-    global unit2
-    global unit2_points
-    global unit2_percent
-    global unit3
-    global unit3_points
-    global unit3_percent
-    global unit4
-    global unit4_points
-    global unit4_percent
-    global unit5
-    global unit5_points
-    global unit5_percent
-    print("You finished studying!")
-    time.sleep(0.75)
-    points_percent = round((points/total)*100, 2)
-    print("You got " + str(points) + " out of " + str(total) + " terms correct!")
-    time.sleep(0.75)
-    print("That's " + str(points_percent) + "%!")
-    studying = False
-    time.sleep(0.75)
-    if unit1.lower() != "no":
-        unit1_percent = round((unit1_points/36)*100, 2)
-        print("Unit 1: " + str(unit1_points) + "/36, " + str(unit1_percent) + "%")
-    if unit2.lower() != "no":
-        unit2_percent = round((unit2_points/15)*100, 2)
-        print("Unit 2: " + str(unit2_points) + "/15, " + str(unit2_percent) + "%")
-    if unit3.lower() != "no":
-        unit3_percent = round((unit3_points/25)*100, 2)
-        print("Unit 3: " + str(unit3_points) + "/25, " + str(unit3_percent) + "%")
-    if unit4.lower() != "no":
-        unit4_percent = round((unit4_points/60)*100, 2)
-        print("Unit 4: " + str(unit4_points) + "/60, " + str(unit4_percent) + "%")
-    if unit5.lower() != "no":
-        unit5_percent = round((unit5_points/40)*100, 2)
-        print("Unit 5: " + str(unit5_points) + "/40, " + str(unit5_percent) + "%")
-    time.sleep(2)
     
 def unit1_track():
     global unit1_points
@@ -164,7 +119,7 @@ definitions = [
     "The Ottoman, Safavid and Mughal Empires which relied heavily on gunpowder and firearms",
     "Allowed books to be printed instead of hand-written and increased literacy",
     "King of England who created the Anglican Church so he could get a divorce from his wife and find another woman who could provide him with an heir",
-    "piece of paper someone could buy to be forgiven of sins",
+    "Pieces of paper someone could buy to be forgiven of sins",
     "The new name given to Constantinople when the Ottoman Empire conquered it",
     "An elite core of eight thousand troops personally loyal to the sultan of the Ottoman Empire",
     "Tax levied by Islamic stats on certain non-Muslim subjects (dhimmis) who were permanently residing in Muslim lands under Islamic law",
@@ -184,7 +139,7 @@ definitions = [
     "Timur the Lame, a Mongol Turkic ruler who invaded Central Asia and the Middle East setting the stage for the rise of the Turkic Empires",
     "Africans living outside of Africa (usually as slaves) who retained some aspects of their cultures",
     "African kingdom on the Gold Coast that expanded rapidly after 1680",
-    "the network of trade routes connecting Europe, Africa, and the Americas that underlay the Atlantic system",
+    "The network of trade routes connecting Europe, Africa, and the Americas that underlay the Atlantic system",
     "An empire in Mexico that was overthrown by Cortes in 1521",
     "Those who plied the seas near North Africa along the Barbary Coast and captured other European slaves in the Mediterranean and then sold them to the sultan or other high-ranking officials",
     "(1474-1566) First bishop of Chiapas in southern Mexico who devoted most of his life to protecting Amerindian peoples from exploitation. His major achievement was the New Laws of 1542, which limited the ability of Spanish settlers to compel Amerindians to labor for them",
@@ -227,7 +182,7 @@ definitions = [
     "French colony in North America along the St. Lawrence River",
     "Colony established by Cortes after overthrowing the Aztecs in Mexico",
     "A route through or around North America that would lead to East Asia and the trade there",
-    "a trade rivalry between traders from Oman and European traders over the Indian Ocean Trade Route that fueled Columbus's search for a new route to India",
+    "A trade rivalry between traders from Oman and European traders over the Indian Ocean Trade Route that fueled Columbus's search for a new route to India",
     "Those who were born on the Iberian Peninsula and stood at the top of the social pyramid in Latin America",
     "The labor-intensive agricultural centers of the new world which were implemented by Spain, Britain, and Portugal",
     "English Protestant dissenters who believed that God predestined souls to heaven or hell before birth. They founded Massachusetts Bay Colony in 1629",
@@ -235,7 +190,7 @@ definitions = [
     "A trading company chartered by the English government in 1672 to conduct its merchants' trade on the Atlantic coast of Africa",
     "Disease brought to the Americas by way of Europeans that was deadly to the native populations",
     "The combining of different religious practices and beliefs",
-    "the time in the early 17th century when Swedish and Polish forces occupied Moscow; it marked the end of the Muscovite Rulers",
+    "The time in the early 17th century when Swedish and Polish forces occupied Moscow; it marked the end of the Muscovite Rulers",
     "Empire based on small outposts rather than control of large territories",
     "Africans captured and sold in the Americas as slaves",
     "1494 treaty in which Spain and Portugal divided the Americas between them",
@@ -246,12 +201,12 @@ definitions = [
     "One of the most influential thinks of the Enlightenment; wrote Wealth of Nations which responded to mercantilism and called for freer trade",
     "The transformation of human existence caused by the deliberate cultivation of particular plants and the deliberate taming and breeding of particular animals",
     "A former prison in Paris that symbolized the abuses of the monarchy and the corrupt aristocracy; it was stormed by angry crowds on July 14, 1789",
-    "the middle class and investors who owned machinery and factories where workers produced goods",
+    "The middle class and investors who owned machinery and factories where workers produced goods",
     "Money available to invest in business",
     "An economic system in which the means of production, such as factories and natural resources, are privately owned and are operated for profit",
     "A political system in which the government owns all property and dominates all aspects of life in a country; Marx believed socialism would replace capitalism and communism would replace socialism as the final stage of economic development",
     "One of the fundamental documents of the French Revolution, defining a set of individual rights and collective rights of all of the estates as one",
-    "production process in which a worker or group of workers is assigned a specialized task in order to increase efficiency",
+    "Production process in which a worker or group of workers is assigned a specialized task in order to increase efficiency",
     "Post-Renaissance period in European history devoted to the study and exploration of new ideas in science, politics, the arts, and philosophy",
     "A prominent bank established and based in Hong Kong since 1865 and focused on finance, corporate investments, and global banking when Hong Kong was a colony of the British Empire",
     "Sweeping reforms in the late 1800s in China that included the abolition of the civil service exam, elimination of corruption, and the establishment of Western-style industrial, commercial, and medical systems",
@@ -260,7 +215,7 @@ definitions = [
     "Genevan philosopher and writer whose political philosophy influenced the French Revolution as well as the overall development of modern political, sociological, and educational thought",
     "Philosopher who wrote two Treatises of Government and advocated the idea of the social contract",
     "German scholar and writer who argued for socialism; published the Communist Manifesto",
-    "organizations of workers that advocate for the right to bargain with employers and put resulting agreements in a contract",
+    "Organizations of workers that advocate for the right to bargain with employers and put resulting agreements in a contract",
     "French for “leave alone,” an economic environment in which transactions between private parties are free from tariffs, government subsidies, and enforced monopolies, with only enough government regulations sufficient to protect property rights against theft and aggression",
     "English writer who published A Vindication of the Rights of Women in 1792 that argues that women should receive the same education as men",
     "The dissolution of Japan's feudal system of government and the restoration of the imperial system that led to Japan modernizing and industrializing",
@@ -665,73 +620,105 @@ while run:
                 print("You can't study now.")
                 studying = False
                 run = False
+                maxtotal = 200
             
             elif unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(137, 176)
+                maxtotal = 40
             elif unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(77, 136)
+                maxtotal = 60
             elif unit1.lower() == "no" and unit2.lower() == "no" and unit5.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(52, 76)
+                maxtotal = 25
             elif unit1.lower() == "no" and unit5.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(37, 51)
+                maxtotal = 15
             elif unit5.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(1, 36)
+                maxtotal = 36
             
             elif unit1.lower() == "no" and unit2.lower == "no" and unit3.lower() == "no":
                 generated_defintion = random.randint(77, 176)
+                maxtotal = 100
             elif unit1.lower() == "no" and unit2.lower == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(52, 76), (137, 176)]))
+                maxtotal = 65
             elif unit1.lower() == "no" and unit2.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(52, 136)
+                maxtotal = 85
             elif unit1.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(37, 51), (137, 176)]))
+                maxtotal = 55
             elif unit1.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (77, 136)]))
+                maxtotal = 75
             elif unit1.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(37, 76)
+                maxtotal = 40
             elif unit2.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (137, 176)]))
+                maxtotal = 76
             elif unit2.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (77, 136)]))
+                maxtotal = 96
             elif unit2.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (52, 76)]))
+                maxtotal = 61
             elif unit3.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(1, 51)
+                maxtotal = 51
             
             elif unit1.lower() == "no" and unit2.lower() == "no":
                 generated_defintion = random.randint(52, 176)
+                maxtotal = 125
             elif unit1.lower() == "no" and unit3.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(37, 51), (77, 176)]))
+                maxtotal = 115
             elif unit1.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(37, 76), (137, 176)]))
+                maxtotal = 80
             elif unit1.lower() == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(52, 136)
+                maxtotal = 100
             elif unit2.lower() == "no" and unit3.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (77, 176)]))
+                maxtotal = 136
             elif unit2.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (52, 76), (137, 176)]))
+                maxtotal = 101
             elif unit2.lower() == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (52, 136)]))
+                maxtotal = 121
             elif unit3.lower() == "no" and unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 51), (137, 176)]))
+                maxtotal = 91
             elif unit3.lower() == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 51), (77, 136)]))
+                maxtotal = 111
             elif unit4.lower() == "no" and unit5.lower() == "no":
                 generated_defintion = random.randint(1, 76)
+                maxtotal = 76
             
             elif unit1.lower() == "no":
                 generated_defintion = random.randint(37, 176)
+                maxtotal = 140
             elif unit2.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 36), (52, 176)]))
+                maxtotal = 161
             elif unit3.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 51), (77, 176)]))
+                maxtotal = 151
             elif unit4.lower() == "no":
                 generated_defintion = random.randint(*random.choice([(1, 76), (137, 176)]))
+                maxtotal = 116
             elif unit5.lower() == "no":
                 generated_defintion = random.randint(1, 136)
+                maxtotal = 136
             
             else:
                 generated_defintion = random.randint(1, 176)
+                maxtotal = 176
 
             if generated_defintion == 1 and clear_1 == False:
                 print(definitions[1])
@@ -1790,68 +1777,36 @@ while run:
                 unit5_track()
                 clear_176 = True
             
-            if unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 40:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit5.lower() == "no" and total == 60:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower() == "no" and unit5.lower() == "no" and unit4.lower() == "no" and total == 25:
-                ending()
-            elif unit1.lower() == "no" and unit5.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 15:
-                ending()
-            elif unit5.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and total == 36:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower == "no" and unit3.lower() == "no" and total == 100:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower == "no" and unit4.lower() == "no" and total == 65:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower == "no" and unit5.lower() == "no" and total == 85:
-                ending()
-            elif unit1.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no" and total == 55:
-                ending()
-            elif unit1.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no" and total == 75:
-                ending()
-            elif unit1.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 40:
-                ending()
-            elif unit2.lower() == "no" and unit3.lower == "no" and unit4.lower() == "no" and total == 76:
-                ending()
-            elif unit2.lower() == "no" and unit3.lower == "no" and unit5.lower() == "no" and total == 96:
-                ending()
-            elif unit2.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 61:
-                ending()
-            elif unit3.lower() == "no" and unit4.lower == "no" and unit5.lower() == "no" and total == 51:
-                ending()
-            elif unit1.lower() == "no" and unit2.lower() == "no" and total == 125:
-                ending()
-            elif unit1.lower() == "no" and unit3.lower() == "no" and total == 115:
-                ending()
-            elif unit1.lower() == "no" and unit4.lower() == "no" and total == 80:
-                ending()
-            elif unit1.lower() == "no" and unit5.lower() == "no" and total == 100:
-                ending()
-            elif unit2.lower() == "no" and unit3.lower() == "no" and total == 136:
-                ending()
-            elif unit2.lower() == "no" and unit4.lower() == "no" and total == 101:
-                ending()
-            elif unit2.lower() == "no" and unit5.lower() == "no" and total == 121:
-                ending()
-            elif unit3.lower() == "no" and unit4.lower() == "no" and total == 91:
-                ending()
-            elif unit3.lower() == "no" and unit5.lower() == "no" and total == 111:
-                ending()
-            elif unit4.lower() == "no" and unit5.lower() == "no" and total == 76:
-                ending()
-            elif unit1.lower() == "no" and total == 140:
-                ending()
-            elif unit2.lower() == "no" and total == 161:
-                ending()
-            elif unit3.lower() == "no" and total == 151:
-                ending()
-            elif unit4.lower() == "no" and total == 116:
-                ending()
-            elif unit5.lower() == "no" and total == 136:
-                ending()
-            elif total == 176:
-                ending()
+            if total == maxtotal:
+                print("You finished studying!")
+                time.sleep(0.75)
+                points_percent = round((points/total)*100, 2)
+                print("You got " + str(points) + " out of " + str(total) + " terms correct!")
+                time.sleep(0.75)
+                print("That's " + str(points_percent) + "%!")
+                studying = False
+                time.sleep(0.75)
+                if unit1.lower() != "no":
+                    unit1_percent = round((unit1_points/36)*100, 2)
+                    print("Unit 1: " + str(unit1_points) + "/36, " + str(unit1_percent) + "%")
+                    time.sleep(0.75)
+                if unit2.lower() != "no":
+                    unit2_percent = round((unit2_points/15)*100, 2)
+                    print("Unit 2: " + str(unit2_points) + "/15, " + str(unit2_percent) + "%")
+                    time.sleep(0.75)
+                if unit3.lower() != "no":
+                    unit3_percent = round((unit3_points/25)*100, 2)
+                    print("Unit 3: " + str(unit3_points) + "/25, " + str(unit3_percent) + "%")
+                    time.sleep(0.75)
+                if unit4.lower() != "no":
+                    unit4_percent = round((unit4_points/60)*100, 2)
+                    print("Unit 4: " + str(unit4_points) + "/60, " + str(unit4_percent) + "%")
+                    time.sleep(0.75)
+                if unit5.lower() != "no":
+                    unit5_percent = round((unit5_points/40)*100, 2)
+                    print("Unit 5: " + str(unit5_points) + "/40, " + str(unit5_percent) + "%")
+                    time.sleep(0.75)
+                time.sleep(1.25)
     elif study.lower() == "no":
         print("I hope you already studied!")
         run = False
