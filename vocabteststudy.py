@@ -1,6 +1,21 @@
 # Please run with Python 3
 # This includes all 176 vocab words from Units 1-5
-# If you have a codehs account, you can run this by copying the code and putting it in a new sandbox file
+
+# Steps to run:
+# Step 1: Go to codehs.com and log in with your s-number and password
+# Step 2: Click on Sandbox
+# Step 3: Click on name your program and then name it something, I don't care what you name it
+# Step 4: Click on create program
+# Step 5: Select Python 3, and click on create program
+# Step 6: Delete the hello world print statement
+# Step 7: Copy this code by clicking on the icon with the two squares above and to the right of the code area
+# Step 8: Paste the code into codehs
+# Step 9: Click run
+
+# Notes:
+# Be sure to save your sandbox program in codehs
+# Codehs is a bit buggy, but it's the best option for this so
+# Codehs does time out after a bit, so be sure to be actively studying
 
 import random
 import time
