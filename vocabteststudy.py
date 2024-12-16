@@ -1,3 +1,7 @@
+# Please run with Python 3
+# This includes all 176 vocab words from Units 1-5
+# If you have a codehs account, you can run this by copying the code and putting it in a new sandbox file
+
 import random
 import time
 
