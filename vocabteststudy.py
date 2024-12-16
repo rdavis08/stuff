@@ -1,6 +1,9 @@
 import random
 import time
 
+def wait(x):
+    time.sleep(x)
+
 def correct():
     global points
     print("That's right!")
@@ -21,7 +24,7 @@ def result():
     else:
         incorrect()
     total += 1
-    time.sleep(1)
+    wait(1)
     
 def unit1_track():
     global unit1_points
@@ -143,7 +146,7 @@ definitions = [
     "An empire in Mexico that was overthrown by Cortes in 1521",
     "Those who plied the seas near North Africa along the Barbary Coast and captured other European slaves in the Mediterranean and then sold them to the sultan or other high-ranking officials",
     "(1474-1566) First bishop of Chiapas in southern Mexico who devoted most of his life to protecting Amerindian peoples from exploitation. His major achievement was the New Laws of 1542, which limited the ability of Spanish settlers to compel Amerindians to labor for them",
-    "the economic system of large financial institutions —banks, stock exchanges, investment companies—that first developed in early modern Europe. Commercial capitalism, the trading system of the early modern economy, is often distinguished from industrial capitalism, the system based on machine production",
+    "The economic system of large financial institutions —banks, stock exchanges, investment companies—that first developed in early modern Europe. Commercial capitalism, the trading system of the early modern economy, is often distinguished from industrial capitalism, the system based on machine production",
     "The practice of mapmaking",
     "Sellable crop that is grown and gathered for the market such as sugar and tobacco",
     "Groups of private investors who paid an annual fee to France and England in exchange for a monopoly over trade to the West Indies colonies",
@@ -616,7 +619,7 @@ while run:
         while studying:
             if unit1.lower() == "no" and unit2.lower() == "no" and unit3.lower() == "no" and unit4.lower() == "no" and unit5.lower() == "no":
                 print("Why did you say no for all of them?")
-                time.sleep(0.75)
+                wait(0.75)
                 print("You can't study now.")
                 studying = False
                 run = False
@@ -1779,36 +1782,36 @@ while run:
             
             if total == maxtotal:
                 print("You finished studying!")
-                time.sleep(0.75)
+                wait(0.75)
                 points_percent = round((points/total)*100, 2)
                 print("You got " + str(points) + " out of " + str(total) + " terms correct!")
-                time.sleep(0.75)
+                wait(0.75)
                 print("That's " + str(points_percent) + "%!")
                 studying = False
-                time.sleep(0.75)
+                wait(0.75)
                 if unit1.lower() != "no":
                     unit1_percent = round((unit1_points/36)*100, 2)
                     print("Unit 1: " + str(unit1_points) + "/36, " + str(unit1_percent) + "%")
-                    time.sleep(0.75)
+                    wait(0.75)
                 if unit2.lower() != "no":
                     unit2_percent = round((unit2_points/15)*100, 2)
                     print("Unit 2: " + str(unit2_points) + "/15, " + str(unit2_percent) + "%")
-                    time.sleep(0.75)
+                    wait(0.75)
                 if unit3.lower() != "no":
                     unit3_percent = round((unit3_points/25)*100, 2)
                     print("Unit 3: " + str(unit3_points) + "/25, " + str(unit3_percent) + "%")
-                    time.sleep(0.75)
+                    wait(0.75)
                 if unit4.lower() != "no":
                     unit4_percent = round((unit4_points/60)*100, 2)
                     print("Unit 4: " + str(unit4_points) + "/60, " + str(unit4_percent) + "%")
-                    time.sleep(0.75)
+                    wait(0.75)
                 if unit5.lower() != "no":
                     unit5_percent = round((unit5_points/40)*100, 2)
                     print("Unit 5: " + str(unit5_points) + "/40, " + str(unit5_percent) + "%")
-                    time.sleep(0.75)
-                time.sleep(1.25)
+                    wait(0.75)
+                wait(1.25)
     elif study.lower() == "no":
         print("I hope you already studied!")
         run = False
     else:
-        time.sleep(0.5)
+        wait(0.5)
