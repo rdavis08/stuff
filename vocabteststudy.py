@@ -2,7 +2,7 @@
 # This includes all 176 vocab words from Units 1-5
 
 # Steps to run:
-# Step 1: Go to codehs.com and log in with your s-number and password
+# Step 1: Go to codehs.com and log in with your s-number email and password
 # Step 2: Click on Sandbox
 # Step 3: Click on name your program and then name it something, I don't care what you name it
 # Step 4: Click on create program
