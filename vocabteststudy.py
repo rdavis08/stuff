@@ -13,7 +13,7 @@
 # Step 9: Click run
 
 # Notes:
-# If codehs doesn't work then honestly it's not worth the effort to download something that can run python, you can go use Mrs. Braun's powerpoint study guide, that's cool to
+# If codehs doesn't work then honestly it's not worth the effort to download something that can run python, you can go use Mrs. Braun's powerpoint study guide, that's cool too
 # Be sure to save your sandbox program in codehs
 # Codehs is a bit buggy, but it's the best option for this so
 # Codehs does time out after a bit, so be sure to be actively studying
