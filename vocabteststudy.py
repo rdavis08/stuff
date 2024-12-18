@@ -1,7 +1,12 @@
 # Please run with Python 3
 # This includes all 176 vocab words from Units 1-5
 
-# Steps to run:
+# If you have a Windows computer, the best way to run it is through the command prompt
+# Steps:
+# Step 1: Download the file
+# Step 2: Follow the steps for parts 1 and 2 at https://www.wikihow.com/Use-Windows-Command-Prompt-to-Run-a-Python-File#:~:text=To%20run%20a%20Python%20file%2C%20type%20%E2%80%9CPython%20File.py,Python%20script.py%E2%80%9D%20instead.
+
+# Alternate steps to run:
 # Step 1: Go to codehs.com and log in with your s-number email and password
 # Step 2: Click on Sandbox
 # Step 3: Click on name your program and then name it something, I don't care what you name it
@@ -13,7 +18,7 @@
 # Step 9: Click run
 
 # Notes:
-# If codehs doesn't work then honestly it's not worth the effort to download something that can run python, you can go use Mrs. Braun's powerpoint study guide, that's cool too
+# If you don't have Windows and codehs doesn't work then honestly it's not worth the effort to download something that can run python, you can go use Mrs. Braun's powerpoint study guide, that's cool too
 # Be sure to save your sandbox program in codehs
 # Codehs is a bit buggy, but it's the best option for this so
 # Codehs does time out after a bit, so be sure to be actively studying
