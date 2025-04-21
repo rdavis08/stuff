@@ -1,5 +1,5 @@
 '''
-Version 2.0.6
+Version 2.1.1
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -19,6 +19,31 @@ nolist = ["no", "n"]
 
 def wait(x):
     time.sleep(x)
+
+def answer_correct():
+    global points
+    global picked_number
+    global unit6_points
+    global unit7_points
+    global unit8_points
+    global unit9_points
+
+    print("That's right!")
+    points += 1
+    if picked_number >= 1 and picked_number <= 30:
+        unit6_points += 1
+    elif picked_number >= 31 and picked_number <= 105:
+        unit7_points += 1
+    elif picked_number >= 106 and picked_number <= 140:
+        unit8_points += 1
+    elif picked_number >= 141 and picked_number <= 171:
+        unit9_points += 1
+
+def answer_incorrect():
+    global correct_word_print
+
+    print("That's not it!")
+    print("The correct term was: " + correct_word_print)
 
 running = True
 
@@ -330,7 +355,7 @@ terms = [
     "self-determination",
     "space race",
     "strategic arms limitation treaty (salt)",
-    "strategic defense initiative",
+    "strategic defense initiative (sdi)",
     "suez crisis",
     "truman doctrine",
     "united nations",
@@ -369,6 +394,15 @@ terms = [
     "voting rights act",
     "world trade organization (wto)"
 ]
+
+anc_alts = ["anc", "african national congress"]
+nato_alts = ["nato", "north atlantic treaty organization"]
+salt_alts = ["salt", "strategic arms limitation treaty"]
+sdi_alts = ["sdi", "strategic defense initiative"]
+asean_alts = ["asean", "association of southeast asian nations"]
+gatt_alts = ["gatt", "general agreement on tariffs and trade"]
+nafta_alts = ["nafta", "north american free trade agreement", "north american free trade agreement (nafta)"]
+wto_alts = ["wto", "world trade organization"]
 
 while running:
     generatable_numbers = []
@@ -455,22 +489,55 @@ while running:
                 if generated_definition == picked_number and picked_number in generatable_numbers:
                     print(definitions[picked_number])
                     correct_word = terms[picked_number]
+                    correct_word_print = correct_word[:1].upper() + correct_word[1:]
                     answer = str(input("What is this term? ")).strip()
-                    if answer.lower() == correct_word:
-                        print("That's right!")
-                        points += 1
-                        if picked_number >= 1 and picked_number <= 30:
-                            unit6_points += 1
-                        elif picked_number >= 31 and picked_number <= 105:
-                            unit7_points += 1
-                        elif picked_number >= 106 and picked_number <= 140:
-                            unit8_points += 1
-                        elif picked_number >= 141 and picked_number <= 171:
-                            unit9_points += 1
+                    
+                    if correct_word == "african national congress (anc)":
+                        if answer.lower() == correct_word or answer.lower() in anc_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "north atlantic treaty organization (nato)":
+                        if answer.lower() == correct_word or answer.lower() in nato_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "strategic arms limitation treaty (salt)":
+                        if answer.lower() == correct_word or answer.lower() in salt_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "strategic defense initiative (sdi)":
+                        if answer.lower() == correct_word or answer.lower() in sdi_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "association of southeast asian nations (asean)":
+                        if answer.lower() == correct_word or answer.lower() in asean_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "general agreement on tariffs and trade (gatt)":
+                        if answer.lower() == correct_word or answer.lower() in gatt_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "nafta (north american free trade agreement)":
+                        if answer.lower() == correct_word or answer.lower() in nafta_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == terms[172]:
+                        if answer.lower() == correct_word or answer.lower() in wto_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
                     else:
-                        correct_word_print = correct_word[:1].upper() + correct_word[1:]
-                        print("That's not it!")
-                        print("The correct term was: " + correct_word_print)
+                        if answer.lower() == correct_word:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    
                     total += 1
                     generatable_numbers.remove(picked_number)
                     wait(1)
