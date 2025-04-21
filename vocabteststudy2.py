@@ -1,5 +1,5 @@
 '''
-Version 2.0.4
+Version 2.0.5
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -380,7 +380,7 @@ terms = [
     "voting rights act",
     "world trade organization (wto)"
 ]
-print(terms[51])
+
 while running:
     generatable_numbers = []
     for number in range(172):
