@@ -1,25 +1,14 @@
 '''
-Version 2.0.5
+Version 2.0.6
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
 
-If you have a computer that runs Windows, the best way to run it is through the command prompt.
-Steps:
-Step 1: Download the file
-Step 2: Open File Explorer
-Step 3: Go to the location where you have saved this file
-Step 4: Find the Location Address (where it has a symbol of a folder and then says the folders the file is in)
-Step 5: Click on the Location Address and only select everything AFTER "C:/Users/[yourusername]/" (instead of / it will be the other slash but Python has special uses for that slash so I can't put it here)
-Step 6: Copy your selection by pressing "Ctrl" and C at the same time on your keyboard.
-Step 7: Close File Explorer
-Step 8: Press the Windows key and R at the same time on your keyboard
-Step 9: Type in "cmd"
-Step 10: Click "OK" or press Enter on your keyboard
-Step 11: Type "cd", press the Space Bar, and then paste in the Location Address you copied by pressing "Ctrl" and V at the same time. After this, press Enter.
-Step 12: Type "python vocabteststudy2.py" and press Enter. The code should now be running, and you can study.
-
-If you have a computer that runs macOS, steps to run this code are coming very soon.
+Steps to run:
+Step 1: Copy this code
+Step 2: Go to https://www.programiz.com/python-programming/online-compiler/
+Step 3: Paste this code in
+Step 4: Click "Run"
 '''
 
 
