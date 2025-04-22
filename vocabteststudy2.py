@@ -1,5 +1,5 @@
 '''
-Version 2.1.1
+Version 2.1.2
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -527,7 +527,7 @@ while running:
                             answer_correct()
                         else:
                             answer_incorrect()
-                    elif correct_word == terms[172]:
+                    elif correct_word == "world trade organization (wto)":
                         if answer.lower() == correct_word or answer.lower() in wto_alts:
                             answer_correct()
                         else:
