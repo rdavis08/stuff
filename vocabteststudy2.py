@@ -1,5 +1,5 @@
 '''
-Version 2.1.2
+Version 2.2
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -403,6 +403,19 @@ asean_alts = ["asean", "association of southeast asian nations"]
 gatt_alts = ["gatt", "general agreement on tariffs and trade"]
 nafta_alts = ["nafta", "north american free trade agreement", "north american free trade agreement (nafta)"]
 wto_alts = ["wto", "world trade organization"]
+un_alts = ["un", "united nations (un)"]
+
+gandhi_alts = ["gandhi"]
+dday_alts = ["d day"]
+pv_alts = ["pancho villa", "francisco villa", "francisco pancho villa"]
+ops_alts = ["one party state"]
+m1_alts = ["march 1st movement", "march 1 movement"]
+m4_alts = ["may 4th movement", "may 4 movement"]
+dfb_alts = ["destroyers for bases agreement"]
+zapata_alts = ["zapata"]
+holocaust_alts = ["the holocaust"]
+thirty_eighth_alts = ["thirty-eighth parallel", "thirty eighth parallel"]
+detente_alts = ["détente"]
 
 while running:
     generatable_numbers = []
@@ -529,6 +542,61 @@ while running:
                             answer_incorrect()
                     elif correct_word == "world trade organization (wto)":
                         if answer.lower() == correct_word or answer.lower() in wto_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "united nations":
+                        if answer.lower() == correct_word or answer.lower() in un_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "mohandas gandhi":
+                        if answer.lower() == correct_word or answer.lower() in gandhi_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "francisco \"pancho\" villa":
+                        if answer.lower() == correct_word or answer.lower() in pv_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "one-party state":
+                        if answer.lower() == correct_word or answer.lower() in ops_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "march first movement":
+                        if answer.lower() == correct_word or answer.lower() in m1_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "may fourth movement":
+                        if answer.lower() == correct_word or answer.lower() in m4_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "destroyers-for-bases agreement":
+                        if answer.lower() == correct_word or answer.lower() in dfb_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "emiliano zapata":
+                        if answer.lower() == correct_word or answer.lower() in zapata_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "holocaust":
+                        if answer.lower() == correct_word or answer.lower() in holocaust_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "38th parallel":
+                        if answer.lower() == correct_word or answer.lower() in thirty_eighth_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "detente":
+                        if answer.lower() == correct_word or answer.lower() in detente_alts:
                             answer_correct()
                         else:
                             answer_incorrect()
