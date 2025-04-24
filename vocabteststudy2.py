@@ -1,5 +1,5 @@
 '''
-Version 2.2
+Version 2.2.1
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -597,6 +597,11 @@ while running:
                             answer_incorrect()
                     elif correct_word == "detente":
                         if answer.lower() == correct_word or answer.lower() in detente_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "d-day":
+                        if answer.lower() == correct_word or answer.lower() in dday_alts:
                             answer_correct()
                         else:
                             answer_incorrect()
