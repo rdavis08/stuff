@@ -1,5 +1,5 @@
 '''
-Version 2.3.1
+Version 2.3.2
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -740,10 +740,7 @@ while running:
                             answer_incorrect()
                     
                     total += 1
-                    print(total)
-                    print(maxtotal)
                     generatable_numbers.remove(picked_number)
-                    print(generatable_numbers)
                     wait(1)
             
             if total == maxtotal:
