@@ -1,5 +1,5 @@
 '''
-Version 2.2.1
+Version 2.3.1
 
 Please run with Python 3
 This includes all 171 vocab words from Units 6-9
@@ -16,6 +16,7 @@ import random
 import time
 
 nolist = ["no", "n"]
+yeslist = ["yes", "y"]
 
 def wait(x):
     time.sleep(x)
@@ -27,23 +28,44 @@ def answer_correct():
     global unit7_points
     global unit8_points
     global unit9_points
+    global unit6_total
+    global unit7_total
+    global unit8_total
+    global unit9_total
 
     print("That's right!")
     points += 1
     if picked_number >= 1 and picked_number <= 30:
         unit6_points += 1
+        unit6_total += 1
     elif picked_number >= 31 and picked_number <= 105:
         unit7_points += 1
+        unit7_total += 1
     elif picked_number >= 106 and picked_number <= 140:
         unit8_points += 1
+        unit8_total += 1
     elif picked_number >= 141 and picked_number <= 171:
         unit9_points += 1
+        unit9_total += 1
 
 def answer_incorrect():
     global correct_word_print
+    global unit6_total
+    global unit7_total
+    global unit8_total
+    global unit9_total
+    global picked_number
 
     print("That's not it!")
     print("The correct term was: " + correct_word_print)
+    if picked_number >= 1 and picked_number <= 30:
+        unit6_total += 1
+    elif picked_number >= 31 and picked_number <= 105:
+        unit7_total += 1
+    elif picked_number >= 106 and picked_number <= 140:
+        unit8_total += 1
+    elif picked_number >= 141 and picked_number <= 171:
+        unit9_total += 1
 
 running = True
 
@@ -395,9 +417,15 @@ terms = [
     "world trade organization (wto)"
 ]
 
+limited_values = [106, 143, 31, 145, 1, 33, 2, 35, 38, 109, 3, 110, 39, 40, 42, 5, 146, 7, 149, 112, 8, 44, 113, 115, 45,
+    152, 118, 119, 153, 47, 10, 48, 50, 51, 32, 402, 316, 298, 366, 299, 300, 301, 367, 260, 368, 262, 369, 304, 305, 307,
+    310, 311, 371, 314, 315, 264, 409, 372, 411, 318, 320, 265, 323, 324, 266, 267, 325, 375, 328, 329, 330, 376, 269, 332,
+    270, 272, 283, 379, 380, 381, 273, 414, 336, 274, 338, 382, 343, 384, 416, 346, 347, 276, 348, 417, 386, 350
+]
+
 anc_alts = ["anc", "african national congress"]
 nato_alts = ["nato", "north atlantic treaty organization"]
-salt_alts = ["salt", "strategic arms limitation treaty"]
+salt_alts = ["salt", "strategic arms limitation treaty", "strategic arms limitation talks", "strategic arms limitation talks (salt)"]
 sdi_alts = ["sdi", "strategic defense initiative"]
 asean_alts = ["asean", "association of southeast asian nations"]
 gatt_alts = ["gatt", "general agreement on tariffs and trade"]
@@ -407,35 +435,60 @@ un_alts = ["un", "united nations (un)"]
 
 gandhi_alts = ["gandhi"]
 dday_alts = ["d day"]
-pv_alts = ["pancho villa", "francisco villa", "francisco pancho villa"]
 ops_alts = ["one party state"]
+pv_alts = ["pancho villa", "francisco villa", "francisco pancho villa"]
 m1_alts = ["march 1st movement", "march 1 movement"]
 m4_alts = ["may 4th movement", "may 4 movement"]
 dfb_alts = ["destroyers for bases agreement"]
 zapata_alts = ["zapata"]
 holocaust_alts = ["the holocaust"]
 thirty_eighth_alts = ["thirty-eighth parallel", "thirty eighth parallel"]
+
 detente_alts = ["détente"]
+banana_alts = ["banana republic"]
+blackshirts_alts = ["black shirts"]
+archduke_alts = ["franz ferdinand", "archduke ferdinand"]
+satellite_alts = ["satellite country", "satellite state", "satellite states"]
+stalingrad_alts = ["stalingrad"]
+mussolini_alts = ["mussolini"]
 
 while running:
-    generatable_numbers = []
-    for number in range(172):
-        generatable_numbers.append(number)
-    generatable_numbers.remove(0)
-    
     unit6_points = 0
     unit7_points = 0
     unit8_points = 0
     unit9_points = 0
     points = 0
+    
+    unit6_total = 0
+    unit7_total = 0
+    unit8_total = 0
+    unit9_total = 0
     total = 0
 
     study = str(input("Would you like to study? ")).strip()
-    if study.lower() == "yes" or study.lower() == "y":
+    if study.lower() in yeslist:
+        limited_list = str(input("Do you only want words from Mrs. Braun's shortened list of the 95 most important words? ")).strip()
+        
         unit6 = str(input("Do you want words from Unit 6? ")).strip()
         unit7 = str(input("Do you want words from Unit 7? ")).strip()
         unit8 = str(input("Do you want words from Unit 8? ")).strip()
         unit9 = str(input("Do you want words from Unit 9? ")).strip()
+        
+        if limited_list.lower() in yeslist:
+            limitation_count = 0
+            generatable_numbers = []
+            for value in limited_values:
+                limitation_count += 1
+                if limitation_count > 35:
+                    applied_value = value - 246
+                    generatable_numbers.append(applied_value)
+                else:
+                    generatable_numbers.append(value)
+        else:
+            generatable_numbers = []
+            for number in range(172):
+                generatable_numbers.append(number)
+            generatable_numbers.remove(0)
         
         studying = True
         while studying:
@@ -451,52 +504,97 @@ while running:
             
             elif unit6.lower() in nolist and unit7.lower() in nolist and unit8.lower() in nolist:
                 generated_definition = random.randint(141, 171)
-                maxtotal = 31
+                if limited_list.lower() in yeslist:
+                    maxtotal = 12
+                else:
+                    maxtotal = 31
             elif unit6.lower() in nolist and unit7.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(106, 140)
-                maxtotal = 35
+                if limited_list.lower() in yeslist:
+                    maxtotal = 22
+                else:
+                    maxtotal = 35
             elif unit6.lower() in nolist and unit8.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(31, 105)
-                maxtotal = 75
+                if limited_list.lower() in yeslist:
+                    maxtotal = 43
+                else:
+                    maxtotal = 75
             elif unit7.lower() in nolist and unit8.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(1, 30)
-                maxtotal = 30
+                if limited_list.lower() in yeslist:
+                    maxtotal = 19
+                else:
+                    maxtotal = 30
             
             elif unit6.lower() in nolist and unit7.lower() in nolist:
                 generated_definition = random.randint(106, 171)
-                maxtotal = 66
+                if limited_list.lower() in yeslist:
+                    maxtotal = 34
+                else:
+                    maxtotal = 66
             elif unit6.lower() in nolist and unit8.lower() in nolist:
                 generated_definition = random.randint(*random.choice([(31, 105), (141, 171)]))
-                maxtotal = 106
+                if limited_list.lower() in yeslist:
+                    maxtotal = 55
+                else:
+                    maxtotal = 106
             elif unit6.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(31, 140)
-                maxtotal = 110
+                if limited_list.lower() in yeslist:
+                    maxtotal = 65
+                else:
+                    maxtotal = 110
             elif unit7.lower() in nolist and unit8.lower() in nolist:
                 generated_definition = random.randint(*random.choice([(1, 30), (141, 171)]))
-                maxtotal = 61
+                if limited_list.lower() in yeslist:
+                    maxtotal = 31
+                else:
+                    maxtotal = 61
             elif unit7.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(*random.choice([(1, 30), (106, 140)]))
-                maxtotal = 65
+                if limited_list.lower() in yeslist:
+                    maxtotal = 41
+                else:
+                    maxtotal = 65
             elif unit8.lower() in nolist and unit9.lower() in nolist:
                 generated_definition = random.randint(1, 105)
-                maxtotal = 105
+                if limited_list.lower() in yeslist:
+                    maxtotal = 62
+                else:
+                    maxtotal = 105
             
             elif unit6.lower() in nolist:
                 generated_definition = random.randint(31, 171)
-                maxtotal = 141
+                if limited_list.lower() in yeslist:
+                    maxtotal = 77
+                else:
+                    maxtotal = 141
             elif unit7.lower() in nolist:
                 generated_definition = random.randint(*random.choice([(1, 30), (106, 171)]))
-                maxtotal = 96
+                if limited_list.lower() in yeslist:
+                    maxtotal = 53
+                else:
+                    maxtotal = 96
             elif unit8.lower() in nolist:
                 generated_definition = random.randint(*random.choice([(1, 105), (141, 171)]))
-                maxtotal = 136
+                if limited_list.lower() in yeslist:
+                    maxtotal = 74
+                else:
+                    maxtotal = 136
             elif unit9.lower() in nolist:
                 generated_definition = random.randint(1, 140)
-                maxtotal = 140
+                if limited_list.lower() in yeslist:
+                    maxtotal = 84
+                else:
+                    maxtotal = 140
             
             else:
                 generated_definition = random.randint(1, 171)
-                maxtotal = 171
+                if limited_list.lower() in yeslist:
+                    maxtotal = 96
+                else:
+                    maxtotal = 171
 
             for picked_number in range(172):
                 if generated_definition == picked_number and picked_number in generatable_numbers:
@@ -605,6 +703,36 @@ while running:
                             answer_correct()
                         else:
                             answer_incorrect()
+                    elif correct_word == "banana republics":
+                        if answer.lower() == correct_word or answer.lower() in banana_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "blackshirts":
+                        if answer.lower() == correct_word or answer.lower() in blackshirts_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "archduke franz ferdinand":
+                        if answer.lower() == correct_word or answer.lower() in archduke_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "satellite countries":
+                        if answer.lower() == correct_word or answer.lower() in satellite_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "battle of stalingrad":
+                        if answer.lower() == correct_word or answer.lower() in stalingrad_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
+                    elif correct_word == "benito mussolini":
+                        if answer.lower() == correct_word or answer.lower() in mussolini_alts:
+                            answer_correct()
+                        else:
+                            answer_incorrect()
                     else:
                         if answer.lower() == correct_word:
                             answer_correct()
@@ -612,7 +740,10 @@ while running:
                             answer_incorrect()
                     
                     total += 1
+                    print(total)
+                    print(maxtotal)
                     generatable_numbers.remove(picked_number)
+                    print(generatable_numbers)
                     wait(1)
             
             if total == maxtotal:
@@ -625,20 +756,20 @@ while running:
                 studying = False
                 wait(0.75)
                 if unit6.lower() not in nolist:
-                    unit6_percent = round((unit6_points/30)*100, 2)
-                    print("Unit 6: " + str(unit6_points) + "/30, " + str(unit6_percent) + "%")
+                    unit6_percent = round((unit6_points/unit6_total)*100, 2)
+                    print("Unit 6: " + str(unit6_points) + "/" + str(unit6_total) + ", " + str(unit6_percent) + "%")
                     wait(0.75)
                 if unit7.lower() not in nolist:
-                    unit7_percent = round((unit7_points/75)*100, 2)
-                    print("Unit 7: " + str(unit7_points) + "/75, " + str(unit7_percent) + "%")
+                    unit7_percent = round((unit7_points/unit7_total)*100, 2)
+                    print("Unit 7: " + str(unit7_points) + "/" + str(unit7_total) + ", " + str(unit7_percent) + "%")
                     wait(0.75)
                 if unit8.lower() not in nolist:
-                    unit8_percent = round((unit8_points/35)*100, 2)
-                    print("Unit 8: " + str(unit8_points) + "/35, " + str(unit8_percent) + "%")
+                    unit8_percent = round((unit8_points/unit8_total)*100, 2)
+                    print("Unit 8: " + str(unit8_points) + "/" + str(unit8_total) + ", " + str(unit8_percent) + "%")
                     wait(0.75)
                 if unit9.lower() not in nolist:
-                    unit9_percent = round((unit9_points/31)*100, 2)
-                    print("Unit 9: " + str(unit9_points) + "/31, " + str(unit9_percent) + "%")
+                    unit9_percent = round((unit9_points/unit9_total)*100, 2)
+                    print("Unit 9: " + str(unit9_points) + "/" + str(unit9_total) + ", " + str(unit9_percent) + "%")
                     wait(0.75)
                 wait(1.25)
     elif study.lower() in nolist:
